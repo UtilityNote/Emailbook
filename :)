@@ -1,0 +1,96 @@
+"""
+Lists
+Student Project
+Project Title:
+"""
+names = ["John C", "Jack F", "Sam E", "Bob O", "Sarah S"]
+
+emails = ["Cjohn@gmail.com", "JackF123@gmail.com", "SamEmaS@gmail.com", "bOb@gmail.com", "SarahS@gmail.com"]
+
+print("Hello, this is the emailbook with the following names. ")
+
+
+print()
+
+action = ""
+
+email = ""
+
+x = False
+
+checking = ""
+
+action2 = ""
+
+while action != "exit":
+    action = ""
+
+    email = ""
+
+    x = False
+
+    checking = ""
+
+    action2 = ""
+    
+    edit = ""
+    
+    y = 0
+    print(str(names))
+    print()
+    action = input("What is your action: exit the program, add a user, check a existing user, or update a entry? ")
+    print()
+    action = action.lower()
+    if action == "add":
+        name = input("What is the name of the user for the program? ")
+        print()
+        names.append(name)
+        while "@" and "." not in email:
+            email = input("Please input a email for " + name + ", ensure to follow proper formatting. ")
+            print()
+            emails.append(email)
+    if action == "check":
+        while checking not in names:
+            checking = input("Please input the name of the user you wish to check ")
+            print()
+        index = names.index(checking)
+        print("This is the email address of the user you are looking for " + str(emails[index]))
+        print()
+    if action == "update":
+        while action2 != "name" and action2!= "email":
+            action2 = input("Do you want to update a name or email? ")
+            action2 = action2.lower()
+            print()
+        if action2 == "name":
+            edit = input("Who's name will you edit? ")
+            while edit not in names:
+                edit = input("Ensure you spell their name correctly")
+            y = names.index(edit)
+            names.remove(edit)
+            name = input("What is new name for the user?")
+            names.insert(y, name)
+        if action2 == "email":
+            print(str(emails))
+            print()
+            while "@" and "." not in edit:
+                edit = input("What email will you edit? ")
+            print()
+            while edit not in emails:
+                edit = input("Ensure you spell the email correctly")
+            y = emails.index(edit)
+            emails.remove(edit)
+            email = input("What is the new email for the user? ")
+            emails.insert(y, email)
+    
+    
+print("Here is the emailbook now that you are done")
+print()
+print(str(names))
+print()
+print(str(emails))
+            
+        
+        
+            
+        
+
